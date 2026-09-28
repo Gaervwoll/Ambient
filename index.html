@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1220">
+<meta name="description" content="Локальный генератор эмбиента">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css">
+<title>Ambient</title>
+</head>
+<body>
+<div class="wrap">
+  <h1>Ambient</h1>
+
+  <div class="orb" id="orb" role="button" aria-label="Play/Pause">
+    <span class="icon" id="icon">▶</span>
+  </div>
+
+  <div class="info">
+    <div class="big" id="rate">1.00×</div>
+    <div class="sub" id="status">Остановлено</div>
+  </div>
+
+  <div class="controls">
+    <button data-delta="-0.05" aria-label="Медленнее">−</button>
+    <button id="reset">1×</button>
+    <button data-delta="0.05" aria-label="Быстрее">+</button>
+  </div>
+
+  <div class="controls">
+    <button id="presetPrev">◀ Пресет</button>
+    <button id="presetNext">Пресет ▶</button>
+  </div>
+
+  <div class="hint">
+    Работает в фоне. Кнопки next/prev на наушниках меняют скорость.<br>
+    Тап по кругу — запуск. Первый тап обязательно рукой.
+  </div>
+
+  <button id="installBtn" class="install" hidden>Установить на главный экран</button>
+</div>
+
+<script src="wav-generator.js" defer></script>
+<script src="app.js" defer></script>
+</body>
+</html>

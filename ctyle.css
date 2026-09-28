@@ -1,0 +1,83 @@
+:root { color-scheme: dark; }
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: radial-gradient(circle at 50% 30%, #1c2230, #05060a 70%);
+  color: #dfe6f3;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  overflow: hidden;
+  user-select: none;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+.wrap {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 24px;
+}
+
+h1 {
+  font-size: 16px;
+  font-weight: 500;
+  opacity: .7;
+  margin: 0;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+.orb {
+  width: 220px; height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #6ea8ff, #2b4a8a 60%, #0b1220);
+  box-shadow: 0 0 60px rgba(110,168,255,.35), inset 0 0 60px rgba(0,0,0,.5);
+  display: grid; place-items: center;
+  transition: transform .4s ease, box-shadow .6s ease;
+  cursor: pointer;
+}
+.orb.playing { animation: pulse 4s ease-in-out infinite; }
+@keyframes pulse {
+  0%,100% { transform: scale(1); box-shadow: 0 0 60px rgba(110,168,255,.35), inset 0 0 60px rgba(0,0,0,.5); }
+  50%     { transform: scale(1.05); box-shadow: 0 0 100px rgba(110,168,255,.6), inset 0 0 60px rgba(0,0,0,.5); }
+}
+.orb .icon { font-size: 42px; opacity: .9; }
+
+.info { text-align: center; font-variant-numeric: tabular-nums; }
+.info .big { font-size: 28px; }
+.info .sub { font-size: 13px; opacity: .6; margin-top: 4px; }
+
+.controls { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+
+button {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  color: inherit;
+  font-size: 15px;
+  padding: 12px 18px;
+  border-radius: 14px;
+  cursor: pointer;
+  min-width: 60px;
+  transition: background .2s;
+}
+button:active { background: rgba(255,255,255,.15); }
+button:disabled { opacity: .4; cursor: default; }
+
+.hint {
+  font-size: 12px;
+  opacity: .5;
+  text-align: center;
+  max-width: 320px;
+  line-height: 1.4;
+}
+
+.install {
+  background: linear-gradient(180deg, #3b82f6, #2563eb);
+  border: none;
+  font-weight: 600;
+  padding: 14px 22px;
+}
